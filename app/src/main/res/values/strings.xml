@@ -1,0 +1,75 @@
+<resources>
+    <string name="app_name">Time Manager</string>
+    <string name="title_activity_main">MainActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+
+    <string name="warning_policy">Не дайте Вашему времени уйти сквозь пальцы как песку!</string>
+    <string name="logo_label">Менеджер времени</string>
+
+    <string name="nav_daily_tasks">Задачи на сегодня</string>
+    <string name="nav_charts">Статистика</string>
+    <string name="nav_edit_tasks">Настройка задач</string>
+    <string name="nav_settings">Настройки</string>
+    <string name="nav_help">Помощь</string>
+
+    <string name="hour">ч.</string>
+    <string name="min">мин.</string>
+
+
+    <string name="title_restore_pass">Восстановление пароля</string>
+    <string name="title_auth_in">Авторизация</string>
+    <string name="title_registration">Регистрация</string>
+    <string name="title_profile">Профиль</string>
+    <string name="title_daily_task">Задачи за сегодня</string>
+    <string name="title_charts">Статистика</string>
+    <string name="title_list_tasks">Справочник задач</string>
+    <string name="title_settings">Настройки</string>
+    <string name="title_help">Помощь</string>
+    <string name="title_add_task">Создание задачи</string>
+    <string name="title_logout">Выйти</string>
+
+    <string name="spend_time_to_task">Затрачено времени:</string>
+    <string name="expected_time">Планируемое время:</string>
+    <string name="priority">Приоритет:</string>
+
+    <string name="placeholder_code">Код</string>
+    <string name="placeholder_login">Логин</string>
+    <string name="placeholder_pass">Пароль</string>
+    <string name="placeholder_confirm_pass">Повторите пароль</string>
+    <string name="placeholder_email">Email</string>
+    <string name="placeholder_restore_pass">Восстановить пароль</string>
+
+    <string name="placeholder_task_name">Название задачи</string>
+    <string name="placeholder_task_priority">Приоритет задачи</string>
+    <string name="placeholder_task_time_start">Начала задачи (время)</string>
+    <string name="placeholder_task_time_end">Конец задачи (время)</string>
+    <string name="placeholder_task_time_all">Время на задачу (мин)</string>
+    <string name="placeholder_expected_time">Планируемое время (мин)</string>
+
+    <string name="label_hours">Часы</string>
+    <string name="label_minutes">Минуты</string>
+    <string name="label_priority">Приоритет</string>
+    <string name="label_delete">Удалить</string>
+
+    <string name="btn_input_time">Ввести продолжительность задачи</string>
+    <string name="btn_start_timer">Запустить таймер</string>
+
+    <string name="send_btn">Отправить</string>
+    <string name="auth_in">Войти</string>
+    <string name="auth_reg">Регистрация</string>
+    <string name="auth_restore">Восстановить пароль</string>
+
+    <string name="label_new_pass">Мы отправили код на Вашу почту. Код действует 5 минут. Скопируйте код из письма и вставьте его в поле "Код". </string>
+
+    <string name="msg_empty_fields">Все поля должны быть заполнены!</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+</resources>

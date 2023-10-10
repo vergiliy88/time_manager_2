@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/screen_background">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintGuide_percent="0.2" />
+
+    <EditText
+        android:id="@+id/login_tv"
+        style="@style/EditText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/placeholder_login"
+        android:inputType="textPersonName"
+        android:textColorHighlight="#936464"
+        android:textColorHint="#FFFFFF"
+        android:textColorLink="#F3F2F2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline3"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/password_tv"
+        style="@style/EditText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space_big"
+        android:ems="10"
+        android:hint="@string/placeholder_pass"
+        android:inputType="textPassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/login_tv"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <Button
+        android:id="@+id/auth_sign_in_btn"
+        style="@style/MainButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/auth_in"
+        app:layout_constraintEnd_toEndOf="@+id/auth_registration_btn"
+        app:layout_constraintStart_toStartOf="@+id/auth_registration_btn"
+        app:layout_constraintTop_toBottomOf="@+id/password_tv" />
+
+    <Button
+        android:id="@+id/auth_registration_btn"
+        style="@style/MainButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/auth_reg"
+        app:layout_constraintEnd_toEndOf="@+id/auth_restore_pass_btn"
+        app:layout_constraintStart_toStartOf="@+id/auth_restore_pass_btn"
+        app:layout_constraintTop_toBottomOf="@+id/auth_sign_in_btn" />
+
+    <Button
+        android:id="@+id/auth_restore_pass_btn"
+        style="@style/MainButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@string/auth_restore"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/auth_registration_btn" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

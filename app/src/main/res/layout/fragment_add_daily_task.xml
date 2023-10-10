@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <ImageView
+        android:id="@+id/background_img4"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/_679976041_3_41"
+        tools:ignore="ImageContrastCheck" />
+
+    <TextView
+        android:id="@+id/textView3"
+        style="@style/LabelDialog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space_double"
+        android:text="@string/placeholder_task_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Spinner
+        android:id="@+id/add_daily_task_priority_sp"
+        style="@style/Spinner"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/space_large"
+        android:layout_marginStart="@dimen/space_double"
+        android:layout_marginEnd="@dimen/space_double"
+        android:background="@color/white"
+        android:dropDownWidth="wrap_content"
+        android:spinnerMode="dropdown"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+    <Button
+        android:id="@+id/input_time_btn"
+        style="@style/MainButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="@dimen/space_tripple"
+        android:shadowColor="@color/label_color"
+        android:shadowDx="@dimen/space_small"
+        android:shadowDy="@dimen/space_small"
+        android:shadowRadius="@dimen/space_normal"
+        android:text="@string/btn_input_time"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/add_daily_task_priority_sp" />
+
+    <Button
+        android:id="@+id/start_timer_btn"
+        style="@style/MainButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_start_timer"
+        android:elevation="@dimen/space_tripple"
+        android:shadowColor="@color/label_color"
+        android:shadowDx="@dimen/space_small"
+        android:shadowDy="@dimen/space_small"
+        android:shadowRadius="@dimen/space_normal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/input_time_btn" />
+
+    <TextView
+        android:id="@+id/textView7"
+        style="@style/LabelDialog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space_large"
+        android:background="@drawable/border_radius_negativ"
+        android:padding="@dimen/space_normal"
+        android:text="@string/spend_time_to_task"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/start_timer_btn" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

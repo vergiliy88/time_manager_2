@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/screen_background">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_restore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintGuide_percent="0.2" />
+
+    <EditText
+        android:id="@+id/email_tv"
+        style="@style/EditText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/placeholder_email"
+        android:inputType="textEmailAddress"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline_restore"
+        tools:ignore="TouchTargetSizeCheck"
+        android:autofillHints="" />
+
+
+    <Button
+        android:id="@+id/restore_pass_btn"
+        style="@style/MainButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/placeholder_restore_pass"
+        app:iconTint="@color/snackColor"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/email_tv" />
+
+    <Button
+        android:id="@+id/restore_login_btn"
+        style="@style/MainButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/auth_in"
+        app:layout_constraintEnd_toEndOf="@+id/auth_restore_pass"
+        app:layout_constraintStart_toStartOf="@+id/auth_restore_pass"
+        app:layout_constraintTop_toBottomOf="@+id/auth_restore_pass" />
+
+    <Button
+        android:id="@+id/auth_restore_pass"
+        style="@style/MainButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/auth_reg"
+        app:layout_constraintEnd_toEndOf="@+id/restore_pass_btn"
+        app:layout_constraintStart_toStartOf="@+id/restore_pass_btn"
+        app:layout_constraintTop_toBottomOf="@+id/restore_pass_btn" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
