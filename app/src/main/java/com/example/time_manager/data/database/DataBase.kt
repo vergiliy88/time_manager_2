@@ -14,7 +14,7 @@ import com.example.time_manager.data.database.models.UserDB
                         UserDB::class,
                         TaskDB::class,
                         DailyTaskDB::class
-                     ], version = 4)
+                     ], version = 1)
 abstract class DataBase : RoomDatabase() {
     abstract fun userDao(): UserDAO
     abstract fun taskDao(): TaskDAO

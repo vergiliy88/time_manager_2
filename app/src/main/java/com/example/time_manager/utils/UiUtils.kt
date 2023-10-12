@@ -5,12 +5,17 @@ import android.text.Spannable
 import android.text.SpannableString
 import android.text.style.StyleSpan
 import android.util.TypedValue
+import android.view.View
+import android.view.ViewGroup
 import android.widget.TextView
 import androidx.annotation.DimenRes
+import androidx.annotation.StringRes
+import androidx.core.content.res.ResourcesCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
 import com.example.time_manager.R
+import com.google.android.material.snackbar.Snackbar
 
 
 class UiUtils {
@@ -90,6 +95,69 @@ class UiUtils {
                     .getDimension(textSize)
             )
         }
+
+        fun snack(
+            rootView: View?,
+            msg: String?,
+            duration: Int
+        ) {
+            snack(
+                rootView,
+                msg,
+                duration,
+                0,
+                null
+            )
+        }
+
+        fun snack(
+            rootView: View?,
+            msg: String?,
+            duration: Int,
+            @StringRes action: Int,
+            runnable: Runnable?
+        ) {
+            if (rootView == null) return
+            val snackbar = Snackbar.make(
+                rootView,
+                msg!!,
+                duration
+            )
+            val snackView = snackbar.view
+
+
+            snackView.layoutParams.width = ViewGroup.LayoutParams.MATCH_PARENT
+            val tvMessage = snackView.findViewById<TextView>(
+                com.google.android.material.R.id.snackbar_text
+            )
+
+            // увеличен размер текста сообщения
+            setTextSize(tvMessage, R.dimen.text_snackbar)
+            tvMessage.isSingleLine = false
+            tvMessage.textAlignment = View.TEXT_ALIGNMENT_CENTER
+            tvMessage.setTextColor(
+                ResourcesCompat.getColor(rootView.resources, R.color.inverse_text, null)
+            )
+            snackView.setBackgroundColor(
+                snackView
+                    .context
+                    .resources
+                    .getColor(R.color.snackColor)
+            )
+            if (runnable != null) {
+                snackbar.setAction(
+                    action
+                ) { v: View? -> runnable.run() }
+                val tvAction = snackView.findViewById<TextView>(
+                    com.google.android.material.R.id.snackbar_action
+                )
+                setTextSize(tvAction, R.dimen.text_snackbar)
+                tvAction.isAllCaps = true
+            }
+            snackbar.show()
+        }
+
+
     }
 
 }

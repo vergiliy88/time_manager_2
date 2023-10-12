@@ -2,7 +2,6 @@ package com.example.time_manager.ui.daily_tasks
 
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -16,7 +15,6 @@ import com.example.time_manager.databinding.FragmentDailyTasksBinding
 import com.example.time_manager.ui.base.BaseAdapter
 import com.example.time_manager.ui.daily_tasks.add_daily_task.AddDailyTaskFragment
 import com.example.time_manager.ui.main.MainActivity
-import com.example.time_manager.ui.tasks.edit.EditTasksFragment
 import com.example.time_manager.utils.UiUtils
 
 class DailyFragment : BaseFragment<FragmentDailyTasksBinding>() {
@@ -78,9 +76,6 @@ class DailyFragment : BaseFragment<FragmentDailyTasksBinding>() {
             val fragment = AddDailyTaskFragment.newInstance()
             UiUtils.replaceFragment(parentFragmentManager, fragment, TAG_FR)
         }
-//        if(_viewModal._tasksOfDay.value!!.size == 0) {
-//            _viewModal.getTasks()
-//        }
 
         changeVisibleFAB(true)
         return root

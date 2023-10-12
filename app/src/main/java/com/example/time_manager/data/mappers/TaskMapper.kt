@@ -38,4 +38,17 @@ object TaskMapper  {
             return@map resultList
         }
     }
+
+    fun mapFromDBList(tasksDB: List<TaskDB>): List<Task>{
+        val taskList: MutableList<Task> = mutableListOf()
+        tasksDB.forEach {
+            val task = Task()
+            task.id = it.id
+            task.name = it.name
+            task.expectedTime = it.expectedTime
+            task.priority = it.priority
+        }
+        return taskList.toList()
+    }
+
 }

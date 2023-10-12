@@ -7,5 +7,6 @@ class DailyTask {
     var taskId: Long? = null
     var spendTime: Int? = null
     var task: Task? = null
-    var date: Long? = null
+    var timerIsOn: Int = 0
+    var date: String? = null
 }

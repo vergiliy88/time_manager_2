@@ -14,6 +14,7 @@ import androidx.core.content.res.ResourcesCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import com.example.time_manager.R
+import com.example.time_manager.utils.Config.Companion.midnight
 import com.google.android.material.snackbar.Snackbar
 import java.text.SimpleDateFormat
 import java.util.*
@@ -137,6 +138,24 @@ class Utils {
             }
         }
 
+        @SuppressLint("SimpleDateFormat")
+        fun convertMinutesTimeToHHMMDotsString(minutesTime: Int?, context: Context): String {
+            var res: String = ""
+            return if (minutesTime != null) {
+                if (minutesTime > 60) {
+                    val timeZone = TimeZone.getTimeZone("UTC")
+                    val df = SimpleDateFormat("HH:mm")
+                    df.timeZone = timeZone
+                    res = df.format(Date(minutesTime * 60 * 1000L))
+                } else {
+                    res = minutesTime.toString() + " ${context.getString(R.string.min)}"
+                }
+                res
+            } else {
+                "0 ${R.string.min}"
+            }
+        }
+
         fun getHoursAndMinFromMin(minutesTime: Int): Array<Int>{
             if (minutesTime > 60) {
                 var hours = (minutesTime / 60).toDouble()
@@ -151,5 +170,16 @@ class Utils {
         fun convertHoursToMinutes(hours: Int, minutes: Int): Int {
             return hours * 60 + minutes
         }
+
+        fun calcDiff(startTime: Int, endTime: Int): Int{
+            var result = 0
+            result = if (startTime > endTime) {
+                midnight - startTime + endTime
+            } else {
+                endTime - startTime
+            }
+            return  result
+        }
+
     }
 }

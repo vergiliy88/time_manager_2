@@ -103,8 +103,6 @@
         <item name="android:textColorHint">@color/main_color</item>
         <item name="android:backgroundTint">@color/main_color</item>
         <item name="android:textSize">@dimen/text_big</item>
-		<item name="android:ambientShadowAlpha">0.01</item>
-		<item name="android:spotShadowAlpha">0.08</item>
     </style>
 
     <style name="RecyclerView" parent="">

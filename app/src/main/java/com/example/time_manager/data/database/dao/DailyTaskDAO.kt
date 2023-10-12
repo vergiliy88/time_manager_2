@@ -12,13 +12,13 @@ interface  DailyTaskDAO {
     @Query("SELECT * FROM DailyTaskDB")
     fun getDailyTaskFlow(): Flow<List<DailyTaskDB>>
 
-    @Query("SELECT * FROM TaskDB WHERE id = :dailyTaskId")
+    @Query("SELECT * FROM DailyTaskDB WHERE id = :dailyTaskId")
     suspend fun getDailyTaskById(dailyTaskId: Long): DailyTaskDB
 
     @Delete
     suspend fun deleteDailyTask(task: DailyTaskDB): Int
 
-    @Query("DELETE FROM TaskDB WHERE id = :dailyTaskId;")
+    @Query("DELETE FROM DailyTaskDB WHERE id = :dailyTaskId;")
     suspend fun deleteDailyById(dailyTaskId: Long): Int
 
     @Update

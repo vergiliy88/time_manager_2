@@ -13,6 +13,9 @@ interface TaskDAO {
     @Query("SELECT * FROM TaskDB")
     fun getTaskFlow(): Flow<List<TaskDB>>
 
+    @Query("SELECT * FROM TaskDB")
+    suspend fun getTaskList(): List<TaskDB>
+
     @Query("SELECT * FROM TaskDB WHERE id = :taskId")
     suspend fun getTaskById(taskId: Long): TaskDB
 

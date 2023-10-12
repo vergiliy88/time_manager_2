@@ -3,6 +3,7 @@ package com.example.time_manager.data.repositories
 import com.example.time_manager.App
 import com.example.time_manager.data.mappers.TaskMapper
 import com.example.time_manager.data.mappers.TaskMapper.mapFromDBFlowList
+import com.example.time_manager.data.mappers.TaskMapper.mapFromDBList
 import com.example.time_manager.domain.models.Task
 import com.example.time_manager.domain.repositories.TasksRepository
 import kotlinx.coroutines.flow.Flow
@@ -35,5 +36,9 @@ class TaskRepositoryImpl: TasksRepository {
 
     override suspend fun deleteTaskById(taskId: Long): Int {
         return db.deleteById(taskId)
+    }
+
+    override suspend fun getTaskList(): List<Task> {
+        return mapFromDBList(db.getTaskList())
     }
 }

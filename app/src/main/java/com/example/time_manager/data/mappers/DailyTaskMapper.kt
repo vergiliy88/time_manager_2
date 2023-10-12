@@ -16,7 +16,9 @@ object DailyTaskMapper {
 //        } else {
 //            dailyTask.task = null
 //        }
+        dailyTask.taskId = dailyTaskDB.taskId
         dailyTask.date = dailyTaskDB.date
+        dailyTask.timerIsOn = dailyTaskDB.timerIsOn
         return dailyTask
     }
 
@@ -24,8 +26,9 @@ object DailyTaskMapper {
         val dailyTaskDB = DailyTaskDB()
         dailyTaskDB.id = dailyTask.id
         dailyTaskDB.spendTime = dailyTask.spendTime
-//        dailyTaskDB.task = TaskMapper.mapToDB(dailyTask.task!!)
+        dailyTaskDB.taskId = dailyTask.taskId
         dailyTaskDB.date = dailyTask.date
+        dailyTaskDB.timerIsOn = dailyTask.timerIsOn
         return dailyTaskDB
     }
 
@@ -39,6 +42,8 @@ object DailyTaskMapper {
                 val task = tasksDB.find { item -> item.id!! == dailyTaskDB.taskId }
                 domainModel.task = TaskMapper.mapFromDB(task!!)
                 domainModel.date = dailyTaskDB.date
+                domainModel.taskId = domainModel.task!!.id
+                domainModel.timerIsOn = dailyTaskDB.timerIsOn
                 resultList.add(domainModel)
             }
             return@map resultList

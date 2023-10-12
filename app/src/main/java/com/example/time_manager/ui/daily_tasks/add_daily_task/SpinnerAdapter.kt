@@ -33,7 +33,7 @@ class SpinnerAdapter(internal var context: Context, var tasks: List<Task>) :
         val view = inflter.inflate(R.layout.spinner_item_task,null)
         val taskName = view.findViewById<View>(R.id.spinner_task_name_tv) as TextView?
         val taskPrior = view.findViewById<View>(R.id.spinner_task_priority_tv) as TextView?
-        taskPrior!!.text = tasks[i].priority.toString()
+        taskPrior!!.text = "${view.context.getText(R.string.priority)} ${tasks[i].priority.toString()}"
         taskName!!.text = tasks[i].name
         return view
     }

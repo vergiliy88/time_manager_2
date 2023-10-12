@@ -17,6 +17,10 @@ class DailyViewModal : BaseViewModal() {
     private var job: Job? = null
 
     init {
+        loadData()
+    }
+
+    private fun loadData() {
         job?.cancel()
         job = viewModelScope.launch {
             val result = dailyTaskUseCase.getDailyTasks()
@@ -26,34 +30,9 @@ class DailyViewModal : BaseViewModal() {
         }
     }
 
-    fun saveDailyTask() {
-
-    }
-
     fun getApi() {
-//        viewModelScope.launch {
-//            val result = getTasks.getTask()
-//            Log.d("API", result.currentPage.toString()?:"1111")
-//        }
-
-//            emit(Resource.loading(data = null))
-//            try {
-//                emit(Resource.message(data = getTasks.getTask()))
-//            } catch (exception: Exception) {
-//                emit(Resource.error(data = null, message = exception.message ?: "Error Occurred!"))
-//            }
         Log.d("DATA TEST", "2323")
     }
-
-//    fun getTasks() {
-//        viewModelScope.launch {
-//            val list = mutableListOf<DailyTask>()
-//            list.add(0, DailyTask(1, "Завтрак", "12", 2))
-//            list.add(1, DailyTask(2, "Путь на работу", "33", 2))
-//            list.add(2, DailyTask(3, "Обед", "14", 2))
-//            _tasksOfDay.value = list
-//        }
-//    }
 
 
 }

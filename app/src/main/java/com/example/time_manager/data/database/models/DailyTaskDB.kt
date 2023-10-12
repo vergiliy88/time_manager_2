@@ -10,5 +10,6 @@ class DailyTaskDB {
     var taskId: Long? = null
     var spendTime: Int? = null
 //    var task: TaskDB? = null
-    var date: Long? = null
+    var timerIsOn: Int = 0
+    var date: String? = null
 }
